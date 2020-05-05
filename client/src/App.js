@@ -6,14 +6,15 @@ import Login from "./components/Login";
 import "./styles.scss";
 
 function App() {
-  return (
-    <Router>
-      <div className="App">
-        <Route exact path="/" component={Login} />
-        <PrivateRoute path="/dash" component={BubblePage} />
-      </div>
-    </Router>
-  );
+    const [colorList, setColorList] = useState([]);
+    return (
+        <Router>
+            <div className="App">
+                <Route exact path="/" component={Login} />
+                <PrivateRoute exact path="/bubbles" component={BubblePage} />
+            </div>
+        </Router>
+    );
 }
 
 export default App;
